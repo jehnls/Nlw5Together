@@ -24,3 +24,18 @@
     - O caminho em um app é primeiro pelo : Server > Controller > Services .....
 
 - **Express tipo de requisições** : Aprendi que o express trabalha com varios tipos de dados ao receber requisições, para enviar requição via json sem dar "Cannot read propery", Temos que inserir o express.json() no middleware App.use().
+
+
+---------------------
+
+####Aula 3
+
+- **Server > Routes > Controller > Services ....**
+
+- **Tratativa de erros**: Ao inves de tratar os erros mandado para controller do service, usando try catch no bloco todo, podemos, no futuro quando o códgico ficar grande acabar esquecendo de algum try catch. Então a melhor maneira para fazer tratativa de erro é usando um middleware no server.
+
+- **Middleware**: É usado quando quer interceptar algo, antes de dar prosseguimento a outro.
+
+- **Express requição async**: O express não tem suporte para tratar error como async, por isso quando tentamos tratar o erro via um middleware, não consegue exibir os erros, só ficando no console. Solução é install uma biblioteca que vai lidar com esses erro : express-async-errors.
+
+- **Middleware como routas**: Aprendi que é possivel usar o middleware em varios lugar exemplo na route, podemos usalo passando no método "USE" do express, fazendo com que ele execute em todas rotas abaixo dele. Obs: Caso queira que o middleware passe por uma rota especifica, basta passa-lo como parametro da função.
