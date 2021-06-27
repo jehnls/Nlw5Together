@@ -39,3 +39,27 @@
 - **Express requição async**: O express não tem suporte para tratar error como async, por isso quando tentamos tratar o erro via um middleware, não consegue exibir os erros, só ficando no console. Solução é install uma biblioteca que vai lidar com esses erro : express-async-errors.
 
 - **Middleware como routas**: Aprendi que é possivel usar o middleware em varios lugar exemplo na route, podemos usalo passando no método "USE" do express, fazendo com que ele execute em todas rotas abaixo dele. Obs: Caso queira que o middleware passe por uma rota especifica, basta passa-lo como parametro da função.
+
+
+-------------------
+
+####Aula 4 
+
+- **Migration add column** : Aprendi que é usado o migration para acresentar uma coluna em uma table no banco de dados sem precisar deletar o banco todo com as coisas já prenchida, para fazer isso devemos, crir uma nova migration com a alteração assim como a migration para criar tabela no banco de dados.
+
+- **bcryptjs** : Usada para encriptografar senha para o banco de dados.
+
+- **Promise<t>** : Aprendi que quando o retorno de uma função é uma promise, sempre devemos colocar o await onde iremos armazena o retorno.
+
+- **Uso do repositorio** : Aprendi que para usarmos algum repositorio, temos que usar o getCustomRepository do typeorm e passa como paramentro o nosso repositorie.
+
+- **Gerar chave com segurança** Aprendi que e possivel geral uma chave incriptografada pesquidandoa algum site no google como MD5 Generator, e escrever um texto, para usar como chave.
+Ex: Chave do sign do jsonWebToken.
+
+- **Cenario de expiração de token** Aprendi que um dos modo de usar a expiração do tokem é que de 15 em 15 minutos ele expira e com o toen antigo a aplicação gera outro token, sem precisar o usuario fazer a autenticação colocando email e senha novamente. Obs: TENHO QUE APRENDER AINDA ESSA MANEIRA DE USO DO JWT. 
+
+- **Foreign no typerom**: Para fazer uma chave estrageira no typerom precisamos para para o metodo foreignKeys, com os paramentos de: nome da chave, node da table que essa chave vai referenciar, nome da coluna da tabela, nome da FK que esta no local, uma ação caso o delete da tabela, e uma ação caso o update:  
+
+- **Foreign na entidae** : É necessario referncia a Fk na entidade, mais é mais facil, basta estaciar a tabela toda (Entidade) que sera usado pela Fk usando, a anotação do typeorm @joinColoumn({name: "nome da chave Fk local" }). 
+
+- **Relação onetoone/ manytoone ...** : Quando nós usamos a o joincolumn, devemos tambem passa para entidade o tipo de relação com a outra tabela estrangeira, com a anotação do typeorm @ManyToOne or @OneTOOne e outras conforme o projeto.
