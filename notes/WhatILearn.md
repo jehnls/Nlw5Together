@@ -1,5 +1,7 @@
 # O que eu aprendi.
 
+ 
+
 ####Aula 2
 
 - **Scripts para usar as bibliotecas do node modules**: Aprendi que é possível fazer scripts no package.json para usar a CLI via terminal de qualquer biblioteca do node modules.
@@ -63,3 +65,19 @@ Ex: Chave do sign do jsonWebToken.
 - **Foreign na entidae** : É necessario referncia a Fk na entidade, mais é mais facil, basta estaciar a tabela toda (Entidade) que sera usado pela Fk usando, a anotação do typeorm @joinColoumn({name: "nome da chave Fk local" }). 
 
 - **Relação onetoone/ manytoone ...** : Quando nós usamos a o joincolumn, devemos tambem passa para entidade o tipo de relação com a outra tabela estrangeira, com a anotação do typeorm @ManyToOne or @OneTOOne e outras conforme o projeto.
+
+- **.Split do javascript** : Serve para separa um string conforme um caracter desejado que contêm no objeto. O retorno desse método é um array, e é possivel fazer uma desestruturação, ignorando o que você não precisa com uma virgula, e armazenando o que deseje em uma variavel. Ex: 
+const name = "Maria do Bairro"; 
+const {, , ultimoNome} = name.split(" "); // ultimoNome === Bairro.
+
+- **Verificar um token valido (Verify) jwt**: Para verificar se um token é valido temos que usar o verify do JWT, passando como parametro o token e a nossa chave secreta.
+
+
+- **Incluir variaveis dentro uma biblioteca** Aprendi que é possivel inserir variaveis dentro de uma biblioteca existente, Exemplo a express, basta criar uma pasta com o nome @types/nomeBiblioteca/index.d.ts. para fazer isso tem que habilitar uma opção do tsconfig (typeRoot["passa o local da nossa pasta @types"]).
+
+- **Buscar por todos tabelas relacinadas no bd** Aprendi que é possivel buscar todos os objetos completos, que esta sendo representado por uma chave estrageira na tabela, mais temos que tomar cuidado ao usar isso, porque se tiver muitos dados nossa pesquisa pode ser muito demora.
+Para usar é : Quando for fazer uma busca no repositorio, usando o .find({where: "", relations:("nome do objeto que representa a chave", "nome do objeto que representa a chave")}) // retorna dos objetos selecinados no relations.
+
+- **Customizar nomes que vem do bd** Aprendi que é possivel customizar nomes que vem do bando de dados usando a biblioteca class-trasforme. Exemplo: colocar um # na frente de uma teg e etc.
+
+- **Não mostra coluna em uma consulta no banco de dados** Aprendi que é possivel não mostra um a coluna usando o class-trasforme, usando a anotação @Exclude.
