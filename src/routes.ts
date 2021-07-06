@@ -7,11 +7,11 @@ import { ListTagsController } from "./controller/ListTagsController";
 import { ListUserController } from "./controller/ListUserController";
 import { ListUserReceiveComplimentsController } from "./controller/ListUserReceiveComplimentsController";
 import { ListUserSendComplimentsController } from "./controller/ListUserSendComplimentsController";
-import { ShowWelcomeController } from "./controller/ShowWelcomeController";
+import { ScreenWelcomeController } from "./controller/ScreenWelcomeController";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
 
-const showWelcomeController = new ShowWelcomeController();
+const showWelcomeController = new ScreenWelcomeController();
 const createUserController = new CreateUserController();
 const createTagController = new CreateTagController();
 const authenticateUserController = new AuthenticateUserController();
