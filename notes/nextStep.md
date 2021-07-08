@@ -1,5 +1,8 @@
-###TO-DO 
+###TO-DO
+
 - Criar um serviço de para enviar um email notificando a pessoa que ela recebeu um elogio.
+
+  - Após alguém enviar um elogio para outro, tenho que pegar o email da pessoa que recebeu o elogio e notificala
 
 - Colocar em produção com heroku.
 
@@ -10,6 +13,5 @@
 - Criar uma class hadle para captura os erros, fazer erros costumizaveis.
 
 - Melhorar a questão de logs.
-
 
 - Colocar um centuri para gerenciar os erros

@@ -10,6 +10,7 @@ import { ListUserSendComplimentsController } from "./controller/ListUserSendComp
 import { ScreenWelcomeController } from "./controller/ScreenWelcomeController";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
+import { getEmailUserReceived } from "./middlewares/getEmailUserReceivedCompliment";
 
 const showWelcomeController = new ScreenWelcomeController();
 const createUserController = new CreateUserController();
@@ -36,7 +37,8 @@ router.post("/login", authenticateUserController.handle);
 router.post(
   "/compliments",
   ensureAuthenticated,
-  createComplimentController.handle
+  createComplimentController.handle,
+  getEmailUserReceived
 );
 router.get(
   "/user/compliments/send",

@@ -1,6 +1,3 @@
-describe('First test', () => {
-  const name = 'jeh';
-  it('number 1', () => {
-    expect(name).toBe('jeh');
-  })
-})
+describe("Send email ", () => {
+  it("Should return an email Address to send new an email", async () => {});
+});
