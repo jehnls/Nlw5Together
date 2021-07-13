@@ -10,7 +10,7 @@ import { ListUserSendComplimentsController } from "./controller/ListUserSendComp
 import { ScreenWelcomeController } from "./controller/ScreenWelcomeController";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
-import { getEmailUserReceived } from "./middlewares/getEmailUserReceivedCompliment";
+import { getEmailUserReceivedCompliment } from "./middlewares/getEmailUserReceivedCompliment";
 
 const showWelcomeController = new ScreenWelcomeController();
 const createUserController = new CreateUserController();
@@ -25,20 +25,29 @@ const listTagsController = new ListTagsController();
 const listUserController = new ListUserController();
 const router = Router();
 
+//Welcome
 router.get("/", showWelcomeController.hello);
+
+//User
+router.post("/login", authenticateUserController.handle);
 router.post("/users", createUserController.handle);
+router.get("/users", ensureAuthenticated, listUserController.handle);
+
+//Tags
 router.post(
   "/tags",
   ensureAuthenticated,
   ensureAdmin,
   createTagController.handle
 );
-router.post("/login", authenticateUserController.handle);
+router.get("/tags", ensureAuthenticated, listTagsController.handle);
+
+//Compliment
 router.post(
   "/compliments",
   ensureAuthenticated,
   createComplimentController.handle,
-  getEmailUserReceived
+  getEmailUserReceivedCompliment
 );
 router.get(
   "/user/compliments/send",
@@ -50,6 +59,5 @@ router.get(
   ensureAuthenticated,
   listUserReceiveComplimentsController.handle
 );
-router.get("/tags", ensureAuthenticated, listTagsController.handle);
-router.get("/users", ensureAuthenticated, listUserController.handle);
+
 export { router };
