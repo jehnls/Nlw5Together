@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { CreateComplimentService } from "../services/CreateComplimentService";
 
 class CreateComplimentController {
-  async handle(req: Request, res: Response): Promise<Response> {
+  async handle(req: Request, res: Response, next: NextFunction): Promise<void> {
     const { tag_id, user_receiver, message } = req.body;
     const { user_id } = req;
 
@@ -15,7 +15,9 @@ class CreateComplimentController {
       message,
     });
 
-    return res.json(compliment);
+    req = user_receiver;
+
+    next();
   }
 }
 

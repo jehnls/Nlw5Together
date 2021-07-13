@@ -1,18 +1,23 @@
 import { NextFunction, Request, Response } from "express";
 import { SendEmailService } from "../services/SendEmailService";
 
-function getEmailUserReceived(
+function getEmailUserReceivedCompliment(
   req: Request,
   res: Response,
   next: NextFunction
-): void {
-  const { email } = req.body;
+) {
+  const sendEmailService = new SendEmailService();
 
-  const sendEmailservice = new SendEmailService();
+  const { user_receiver } = req.body;
+  const sendEmail = sendEmailService.execute(user_receiver);
 
-  const sendemail = sendEmailservice.execute(email);
+  if (sendEmail) {
+    next();
+  }
 
-  //if(sendEmail )
+  return res.status(400).json({
+    error: "Usuario não possui email cadastrado.",
+  });
 }
 
-export { getEmailUserReceived };
+export { getEmailUserReceivedCompliment };

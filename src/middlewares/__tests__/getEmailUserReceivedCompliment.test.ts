@@ -1,15 +1,22 @@
-describe("get email user received compliment", () => {
+describe("Should get email", () => {
   interface IUser {
     name: string;
     email: string;
   }
 
-  const user: IUser = {
-    name: "jef",
-    email: "jef@live.com",
-  };
-
   it("should return person's email  that it was received compliment", () => {
-    expect(user.email).toEqual("jef@live.com");
+    const email = "";
+    expect(email).toEqual(String);
+  });
+
+  it("Should get user with email and name", () => {
+    const modelUser: IUser = {
+      name: "jeferson",
+      email: "jeferson@hotmail.com",
+    };
+
+    const user = "";
+
+    expect(user).toBe(modelUser);
   });
 });
