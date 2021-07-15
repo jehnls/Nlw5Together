@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { SendEmailService } from "../services/SendEmailService";
 
-function getEmailUserReceivedCompliment(
+async function getEmailUserReceivedCompliment(
   req: Request,
   res: Response,
   next: NextFunction
@@ -9,10 +9,10 @@ function getEmailUserReceivedCompliment(
   const sendEmailService = new SendEmailService();
 
   const { user_receiver } = req.body;
-  const sendEmail = sendEmailService.execute(user_receiver);
+  const sendEmail = await sendEmailService.execute(user_receiver);
 
   if (sendEmail) {
-    next();
+    res.status(200).json({ sendEmail });
   }
 
   return res.status(400).json({
