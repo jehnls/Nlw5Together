@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.12",
     "@types/jest": "^26.0.23",
     "@types/jsonwebtoken": "^8.5.2",
@@ -29,6 +30,7 @@
     "@types/bcryptjs": "^2.4.2",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.4.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
