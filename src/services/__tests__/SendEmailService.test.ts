@@ -1,3 +1,5 @@
+import jest from "jest";
+
 import { IEmail, SendEmailService } from "../SendEmailService";
 
 describe("Email Test", () => {
