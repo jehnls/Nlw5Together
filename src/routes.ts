@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { AuthenticateUserController } from "./controller/AuthenticateUserController";
-import { CreateComplimentController } from "./controller/CreateComplimentController";
-import { CreateTagController } from "./controller/CreateTagController";
-import { CreateUserController } from "./controller/CreateUserController";
-import { ListTagsController } from "./controller/ListTagsController";
-import { ListUserController } from "./controller/ListUserController";
-import { ListUserReceiveComplimentsController } from "./controller/ListUserReceiveComplimentsController";
-import { ListUserSendComplimentsController } from "./controller/ListUserSendComplimentsController";
-import { ScreenWelcomeController } from "./controller/ScreenWelcomeController";
-import { ensureAdmin } from "./middlewares/ensureAdmin";
-import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
-import { getEmailUserReceivedCompliment } from "./middlewares/getEmailUserReceivedCompliment";
+import { AuthenticateUserController } from "@controllers/AuthenticateUserController";
+import { CreateComplimentController } from "@controllers/CreateComplimentController";
+import { CreateTagController } from "@controllers/CreateTagController";
+import { CreateUserController } from "@controllers/CreateUserController";
+import { ListTagsController } from "@controllers/ListTagsController";
+import { ListUserController } from "@controllers/ListUserController";
+import { ListUserReceiveComplimentsController } from "@controllers/ListUserReceiveComplimentsController";
+import { ListUserSendComplimentsController } from "@controllers/ListUserSendComplimentsController";
+import { ScreenWelcomeController } from "@controllers/ScreenWelcomeController";
+import { ensureAdmin } from "@middlewares/ensureAdmin";
+import { ensureAuthenticated } from "@middlewares/ensureAuthenticated";
+import { getEmailUserReceivedCompliment } from "@middlewares/getEmailUserReceivedCompliment";
 
 const showWelcomeController = new ScreenWelcomeController();
 const createUserController = new CreateUserController();

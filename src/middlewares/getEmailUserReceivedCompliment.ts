@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { SendEmailService } from "../services/SendEmailService";
+import { SendEmailService } from "@services/SendEmailService";
 
 async function getEmailUserReceivedCompliment(
   req: Request,
